@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Nav from './components/Nav'
+import FetchMatches from './components/liveMatches/FetchMatches';
+import FetchSeries from './components/series/FetchSeries';
+import FetchSeriesMatches from './components/series/matches/SeriesMatches';
+import MatchInfo from './components/matchInfo/MatchInfo';
+import 'bootswatch/dist/lumen/bootstrap.min.css';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <BrowserRouter>
+    <Nav/>
+    <Routes>
+      <Route exact path='/' element={<FetchMatches/> } />
+      <Route exact path='/series' element={<FetchSeries/> } />
+      <Route exact path='/seriesMatches' element={<FetchSeriesMatches/> } />
+      <Route exact path='/matchInfo' element={<MatchInfo/> } />
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
+// API KEY = f511baff-9794-4ca5-b544-9716f588c1cb

@@ -1,0 +1,54 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  .card-title {
+    margin: 0;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .series-name {
+    margin-top: 0;
+  }
+  
+  .series-dates {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .series-matches {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .match-type {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    text-align: center;
+  }
+  
+  .match-type h5 {
+    margin: 0;
+  }
+  
+  .match-type p {
+    margin: 5px 0 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
