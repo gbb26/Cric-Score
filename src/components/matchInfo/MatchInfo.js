@@ -19,12 +19,12 @@ const MatchInfo = () => {
 const id = location.state;
     useEffect(()=>{
       const getData = async () =>{
-        const d = await fetch(`https://api.cricapi.com/v1/match_info?apikey=API_KEY&id=${id}`)
+        const d = await fetch(`https://api.cricapi.com/v1/match_info?apikey=${process.env.REACT_APP_KEY}&id=${id}`)
         const da = await d.json()
         setData({
           name:da.data.name,
           sourceA:da.data.teamInfo[0].img,
-          teamA:da.data.teamInfo[0].matchName,
+          teamA:da.data.teamInfo[0].name,
           scoreA:`${da.data.score[0].r}/${da.data.score[0].w} (${da.data.score[0].o} Overs)`,
           sourceB:da.data.teamInfo[1].img,
           teamB:da.data.teamInfo[1].name,

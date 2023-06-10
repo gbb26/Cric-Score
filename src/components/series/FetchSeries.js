@@ -5,7 +5,7 @@ function FetchSeries() {
   const [data,setData] = useState([])
 
   const getData = async () =>{
-    const d = await fetch(`https://api.cricapi.com/v1/series?apikey=API_KEY&offset=0`)
+    const d = await fetch(`https://api.cricapi.com/v1/series?apikey=${process.env.REACT_APP_KEY}&offset=0`)
     const da = await d.json()
     setData(da.data)
   }
