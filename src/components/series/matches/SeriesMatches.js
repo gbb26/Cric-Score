@@ -9,7 +9,7 @@ const FetchSeriesMatches = () => {
   const id = location.state;
   useEffect(()=>{
     const getData = async () =>{
-      const d = await fetch(`https://api.cricapi.com/v1/series_info?apikey=API_KEY&id=${id}`)
+      const d = await fetch(`https://api.cricapi.com/v1/series_info?apikey=${process.env.REACT_APP_KEY}&id=${id}`)
       const da = await d.json()
       setData(da.data.matchList)
     }

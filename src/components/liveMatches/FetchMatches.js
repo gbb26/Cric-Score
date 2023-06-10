@@ -6,7 +6,7 @@ const FetchMatches = () => {
     const [matchData,setMatchData] = useState([])
 
     const getData = async () =>{
-        const d = await fetch(`https://api.cricapi.com/v1/cricScore?apikey=API_KEY&offset=0`)
+        const d = await fetch(`https://api.cricapi.com/v1/cricScore?apikey=${process.env.REACT_APP_KEY}&offset=0`)
         const da = await d.json()
         setMatchData(da.data)
     }
